@@ -1,0 +1,36 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: com.jpa.example.global.NamingStrategy.CustomNamingStrategy
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    url: jdbc:h2:mem:community;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE;
+    driver-class-name: org.h2.Driver
+    username: sa
+    hikari:
+      connection-init-sql: SELECT 1
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  flyway:
+    baseline-version: 1
+    encoding: UTF-8
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace

@@ -1,0 +1,25 @@
+= Rest Docs Board API Document
+notification-api-docs
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+ifndef::snippets[]
+:snippets: ../../../build/generated-snippets
+endif::[]
+
+
+== Nice
+=== 게시글 좋아요
+==== 요청
+include::{snippets}/post-nices/http-request.adoc[]
+include::{snippets}/post-nices/path-parameters.adoc[]
+include::{snippets}/post-nices/request-fields.adoc[]
+
+==== 응답
+include::{snippets}/post-nices/http-response.adoc[]
+include::{snippets}/post-nices/response-fields.adoc[]
+

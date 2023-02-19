@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: com.jpa.example.global.NamingStrategy.CustomNamingStrategy
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    url: jdbc:h2:mem:test;MODE=MySQL;
+    driver-class-name: org.h2.Driver
+    username: sa
+    hikari:
+      connection-init-sql: SELECT 1
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  flyway:
+    enabled: false
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
